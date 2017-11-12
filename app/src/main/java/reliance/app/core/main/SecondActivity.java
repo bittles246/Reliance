@@ -12,7 +12,8 @@ import android.widget.ListView;
 public class SecondActivity extends AppCompatActivity {
 
 
-    private Button Notes;
+    private Button notes;
+    private Button feedBack;
 
 
     @Override
@@ -20,13 +21,23 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        Notes =  findViewById(R.id.btnNotes);
+        notes =  findViewById(R.id.btnNotes);
+        feedBack = findViewById(R.id.btnFeedBack);
 
 
-        Notes.setOnClickListener(new View.OnClickListener() {
+
+        notes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SecondActivity.this, MakeNote.class);
+                startActivity(intent);
+            }
+        });
+
+        feedBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SecondActivity.this, FeedHub.class);
                 startActivity(intent);
             }
         });
